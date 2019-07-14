@@ -20,3 +20,10 @@ void MainWindow::loadUI(){
     ui->developer->setFont(QFont(font_family, font_size_2));
     ui->play_button->setFont(QFont(font_family, font_size_2));
 }
+
+void MainWindow::on_play_button_clicked()
+{
+    this->close();
+    Game *game = new Game();
+    game->show();
+}
