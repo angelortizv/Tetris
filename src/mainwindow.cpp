@@ -16,9 +16,9 @@ MainWindow::~MainWindow()
 
 void MainWindow::loadUI(){
     QFontDatabase::addApplicationFont(":/src/font/pixel.ttf");
-    ui->title_label->setFont(QFont(font_family, font_size_title));
     ui->developer->setFont(QFont(font_family, font_size_2));
     ui->play_button->setFont(QFont(font_family, font_size_2));
+    ui->sel_level_button->setFont(QFont(font_family, font_size_2));
 }
 
 void MainWindow::on_play_button_clicked()

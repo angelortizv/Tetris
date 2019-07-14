@@ -6,7 +6,6 @@
 #include <QMessageBox>
 #include <QPainter>
 #include <QKeyEvent>
-#include "util.h"
 
 const int BLOCK_SIZE = 25;
 const int MARGIN     = 5 ;
@@ -65,8 +64,6 @@ public:
     void GetBorder(int block[4][4],Border &border);
     void ConvertStable(int x,int y);
     bool IsCollide(int x,int y,Direction dir);
-
-    Util *util;
 
 public:
     explicit Game(QWidget *parent = 0);
