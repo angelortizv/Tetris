@@ -6,7 +6,7 @@ Game::Game(QWidget *parent):
     ui(new Ui::Game)
 {
     ui->setupUi(this);
-    this->resize(450,520);
+    startMusicPlayer();
     InitGame();
     StartGame();
 }
@@ -87,6 +87,13 @@ void Debug(Game *obj){
     int i = 0;
 }
 
+void Game::startMusicPlayer(){
+    QMediaPlayer* player = new QMediaPlayer;
+    player->setMedia(QUrl("qrc:/src/audio/theme.mp3"));
+    player->setVolume(50);
+    player->play();
+}
+
 void Game::InitGame()
 {
     for(int i=0;i<AREA_ROW;i++){
@@ -99,6 +106,7 @@ void Game::InitGame()
     refresh_ms=3;
     srand(time(0));
     score=0;
+    loadUI();
 }
 
 void Game::StartGame()
@@ -110,7 +118,6 @@ void Game::StartGame()
     int block_id=rand()%7;
     CreateBlock(next_block,block_id);
     ResetBlock();
-
     Debug(this);
 }
 
@@ -123,6 +130,9 @@ void Game::GameOver()
     QMessageBox::information(this,"failed","game over");
 }
 
+void Game::loadUI(){
+
+}
 
 void Game::ResetBlock()
 {
@@ -227,7 +237,7 @@ void Game::BlockMove(Direction dir)
         block_pos.pos_x+=1;
         for(int i=cur_border.ubound;i<=cur_border.dbound;i++){
             for(int j=0;j<4;j++){
-                if(block_pos.pos_x+j<=AREA_COL-1&&game_area[block_pos.pos_y+i][block_pos.pos_x+j]!=2){ //注意場景數組不越界
+                if(block_pos.pos_x+j<=AREA_COL-1&&game_area[block_pos.pos_y+i][block_pos.pos_x+j]!=2){
                     if(block_pos.pos_y+i >=0){
                         game_area[block_pos.pos_y+i][block_pos.pos_x+j]=cur_block[i][j];
                     }
@@ -448,11 +458,12 @@ void Game::paintEvent(QPaintEvent *event)
         }
     }
 
+    QFontDatabase::addApplicationFont(":/src/font/pixel.ttf");
     painter.setPen(Qt::black);
-    painter.setFont(QFont("Arial",14));
+    painter.setFont(QFont(font_family, font_size));
     painter.drawText(QRect(MARGIN*3+AREA_COL*BLOCK_SIZE,MARGIN*2+4*BLOCK_SIZE,BLOCK_SIZE*4,BLOCK_SIZE*4),
                      Qt::AlignCenter,
-                     "SCORE : "+QString::number(score));
+                     "SCORE: "+ QString::number(score));
     for(int i=0;i<AREA_ROW;i++)
         for(int j=0;j<AREA_COL;j++)
         {

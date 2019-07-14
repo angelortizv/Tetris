@@ -10,7 +10,7 @@
         <file>src/img/logo</file>
         <file>src/img/icon_settings.png</file>
         <file>src/img/icon_help.png</file>
-        <file>src/audio/Tetris - GameBoy - Type A.mp3</file>
         <file>src/img/background.jpg</file>
+        <file>src/audio/theme.mp3</file>
     </qresource>
 </RCC>

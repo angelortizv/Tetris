@@ -6,6 +6,8 @@
 #include <QMessageBox>
 #include <QPainter>
 #include <QKeyEvent>
+#include <QFontDatabase>
+#include <QMediaPlayer>
 
 const int BLOCK_SIZE = 25;
 const int MARGIN     = 5 ;
@@ -88,5 +90,12 @@ private:
     int paint_timer;
     int speed_ms;
     int refresh_ms;
+
+    static const int font_size_title = 25;
+    static const int font_size = 15;
+    static const int font_size_2 = 8;
+    const QString font_family = "Joystix";
+    void loadUI();
+    void startMusicPlayer();
 };
 #endif // GAME_H

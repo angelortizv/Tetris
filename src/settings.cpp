@@ -6,6 +6,7 @@ Settings::Settings(QWidget *parent) :
     ui(new Ui::Settings)
 {
     ui->setupUi(this);
+    loadUI();
 }
 
 Settings::~Settings()
@@ -19,3 +20,9 @@ void Settings::on_pushButton_clicked()
     MainWindow *w = new MainWindow();
     w->show();
 }
+
+void Settings::loadUI(){
+    QFontDatabase::addApplicationFont(":/src/font/pixel.ttf");
+    ui->pushButton->setFont(QFont(font_family, font_size_2));
+}
+
