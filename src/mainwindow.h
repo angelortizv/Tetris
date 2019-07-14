@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QFontDatabase>
 
 namespace Ui {
 class MainWindow;
@@ -17,6 +18,11 @@ public:
 
 private:
     Ui::MainWindow *ui;
+    static const int font_size_title = 25;
+    static const int font_size = 15;
+    static const int font_size_2 = 8;
+    const QString font_family = "Joystix";
+    void loadUI();
 };
 
 #endif // MAINWINDOW_H

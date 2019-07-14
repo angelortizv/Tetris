@@ -1,0 +1,12 @@
+<RCC>
+    <qresource prefix="/">
+        <file>src/font/pixel.ttf</file>
+        <file>src/img/background</file>
+        <file>src/img/icon.png</file>
+        <file>src/img/tiles/space_key.png</file>
+        <file>src/img/tiles/right_key.png</file>
+        <file>src/img/tiles/left_key.png</file>
+        <file>src/img/tiles/down_key.png</file>
+        <file>src/img/tiles/up_key.png</file>
+    </qresource>
+</RCC>
