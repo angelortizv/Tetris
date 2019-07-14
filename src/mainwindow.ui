@@ -100,7 +100,7 @@ background-color: rgb(164, 164, 164);</string>
      <string>LEVEL: 1</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton">
+   <widget class="QPushButton" name="settings_button">
     <property name="geometry">
      <rect>
       <x>160</x>
@@ -135,7 +135,7 @@ QPushButton:hover{
      </size>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_2">
+   <widget class="QPushButton" name="help_button">
     <property name="geometry">
      <rect>
       <x>250</x>

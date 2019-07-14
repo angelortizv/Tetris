@@ -4,6 +4,8 @@
 #include <QMainWindow>
 #include <QFontDatabase>
 #include "game.h"
+#include "help.h"
+#include "settings.h"
 
 namespace Ui {
 class MainWindow;
@@ -19,6 +21,10 @@ public:
 
 private slots:
     void on_play_button_clicked();
+
+    void on_help_button_clicked();
+
+    void on_settings_button_clicked();
 
 private:
     Ui::MainWindow *ui;

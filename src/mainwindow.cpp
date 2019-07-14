@@ -27,3 +27,18 @@ void MainWindow::on_play_button_clicked()
     Game *game = new Game();
     game->show();
 }
+
+
+void MainWindow::on_help_button_clicked()
+{
+    this->close();
+    Help *help = new Help();
+    help->show();
+}
+
+void MainWindow::on_settings_button_clicked()
+{
+    this->close();
+    Settings *settings = new Settings();
+    settings->show();
+}

@@ -26,15 +26,21 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
         main.cpp \
         src/mainwindow.cpp \
-        src/game.cpp
+        src/game.cpp \
+        src/help.cpp \
+        src/settings.cpp
 
 HEADERS += \
         src/mainwindow.h \
-        src/game.h
+        src/game.h \
+        src/help.h \
+        src/settings.h
 
 FORMS += \
         src/mainwindow.ui \
-        src/game.ui
+        src/game.ui \
+        src/help.ui \
+        src/settings.ui
 
 RESOURCES += \
     resources.qrc
